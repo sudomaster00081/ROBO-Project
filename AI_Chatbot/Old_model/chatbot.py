@@ -98,7 +98,7 @@ if __name__ == '__main__':
         botReply = res[0]
         replyIntent = res[1][0]
 
-        name = "christy"
+        name = "Person"
         if(replyIntent['intent']=='greeting'):
             botReply += " " + name
         
