@@ -1,0 +1,15 @@
+[
+    {
+      "input": "Hello, how are you?",
+      "output": "I'm good, thank you. How about you?"
+    },
+    {
+      "input": "What's your favorite color?",
+      "output": "I don't have a favorite color. How about you?"
+    },
+    {
+      "input": "Tell me a joke.",
+      "output": "Why don't scientists trust atoms? Because they make up everything!"
+    }
+  ]
+  

@@ -1,0 +1,228 @@
+{"intents": [
+    {
+        "tag": "no answer",
+                "patterns": [
+                      "",
+                      " ",
+                      "None",
+                      "none",
+                      "non"
+                  ],
+                "responses": [
+                    "Sorry, can't understand you"
+                ]
+    },
+  {
+      "tag": "greeting",
+            "patterns": [
+                "Hi there",
+                "What's up?",
+                "Is anyone there?",
+                "Hey",
+                "Hola",
+                "Hello",
+                "Good day",
+                "Namaste",
+                "Hello!",
+                "Hey!",
+                "Hiya!",
+                "Greetings!",
+                "Good day!",
+                "Howdy!",
+                "Salutations!",
+                "What's up?",
+                "Yo!",
+                "Hi, friend!",
+                "Hey, buddy!",
+                "Hello, folks!",
+                "Nice to see you!",
+                "Good morning",
+                "Nice to meet you",
+                "hi",
+                "Howdy!",
+                "Hey there, stranger!",
+                "Hi, friend!",
+                "Hi, pal!"
+            ],
+            "responses": [
+                "Hello",
+                "Good to see you again",
+                "Hi there, how can I help?"
+            ]
+  },
+  {
+    "tag" : "How are you?",
+        "patterns": [
+            "How are you",
+            "How is it going?",
+            "How you ?",
+            "Are you fine?",
+            "How you doing ?",
+            "How are things with you?",
+            "How are you feeling today?",
+            "How are you doing today?",
+            "How's everything?",
+            "How's your day going?",
+            "How are things?",
+            "How have you been?",
+            "what about you ?",
+            "How are you feeling?",
+            "How are things with you?"
+            
+        ],
+        "responses":[
+            "I am fine",
+            "Fine",
+            "I am fine....., thanks",
+            "Good",
+            "Not bad",
+            "going well."
+        ]
+  },
+  {
+    "tag": "Thanks",
+          "patterns": [
+              "Thank you",
+              "Thanks",
+              "Thank you very much",
+              "Thanks alot",
+              "Thanks very much",
+              "Thank you for your service",
+              "Thanks for everything",
+              "That's helpful",
+              "Awesome, thanks",
+              "Thanks for helping me",
+              "Thanks a lot!",
+              "Many thanks!",
+              "I appreciate it!",
+              "Thank you kindly!",
+              "I'm grateful!",
+              "Thanks a ton!",
+              "That's very kind of you!",
+              "Thank you so much!",
+              "I can't thank you enough!",
+              "Thank you for your help generosity kindness "
+          ],
+          "responses": [
+              "Happy to help!",
+              "Any time!",
+              "My pleasure"
+          ]
+},
+
+  {
+      "tag": "options",
+            "patterns": [
+                "How you could help me?",
+                "What you can do?",
+                "What help you provide?",
+                "How you can be helpful?",
+                "What support is offered",
+                "Can you assist me?",
+                "I need some help",
+                "I'm in trouble, can you help?",
+                "Please help me out",
+                "I need your help, please"
+            ],
+            "responses": [
+                "I am a general purpose chatbot. My capabilities are : \n 1. I can chat with you. Try asking me for jokes or riddles! \n 2. Ask me the date and time \n Thank you!! "
+            ]
+  },
+  {
+      "tag": "goodbye",
+            "patterns": [
+                "bye",
+                "See you later",
+                "Goodbye",
+                "Get lost",
+                "Till next time",
+                "bbye",
+                "bye",
+                "See you later",
+                "take care",
+                "farewell",
+                "So long",
+                "Have a nice day",
+                "Catch you later",
+                "See you soon",
+                "Until next time",
+                "bye-bye",
+                "See ya",
+                "Take it easy",
+                "Peace out",
+                "Later",
+                "Have a good one",
+                "adios",
+                "See you around",
+                "toodle-oo",
+                "goodnight",
+                "bye for now",
+                "stay safe",
+                "keep in touch"
+            ],
+            "responses": [
+                "See you!",
+                "Have a nice day",
+                "Bye! Come back again soon."
+            ]
+  },
+   {   "tag": "jokes",
+            "patterns": [
+                "Tell me a joke",
+                "Joke",
+                "Make me laugh"
+            ],
+            "responses": [
+                "A perfectionist walked into a bar...apparently, the bar wasn't set high enough",
+                "I ate a clock yesterday, it was very time-consuming",
+                "Never criticize someone until you've walked a mile in their shoes. That way, when you criticize them, they won't be able to hear you from that far away. Plus, you'll have their shoes.",
+                "The world tongue-twister champion just got arrested. I hear they're gonna give him a really tough sentence.",
+                "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+                "What did the traffic light say to the car? \"Don't look now, I'm changing.\"",
+                "What do you call a snowman with a suntan? A puddle.",
+                "How does a penguin build a house? Igloos it together",
+                "I went to see the doctor about my short-term memory problems – the first thing he did was make me pay in advance",
+                "As I get older and I remember all the people I’ve lost along the way, I think to myself, maybe a career as a tour guide wasn’t for me.",
+                "o what if I don't know what 'Armageddon' means? It's not the end of the world."
+            ]
+  },
+  {   "tag": "Identity",
+            "patterns": [
+                "Who are you",
+                "what are you",
+                "I don't know who you are.",
+                "Can you introduce yourself?",
+                "May I know who you are?",
+                "Who am I speaking with?",
+                "What's your name ?"
+                                
+            ],
+            "responses": [
+                "I am Ted, a Deep-Learning chatbot"
+            ]
+
+  },
+  {
+      "tag": "datetime",
+            "patterns": [
+                "What is the time",
+                "what is the date",
+                "date",
+                "time",
+                "tell me the date","day","what day is is today",
+                "What time is it?",
+                "Could you tell me the time, please?",
+                "What's the time right now?",
+                "Could you let me know what time it is?",
+                "Do you know what time it is?",
+                "Can you tell me what time it is?",
+                "What is the current time?"
+            ],
+            "responses": [
+                "Date and Time"
+            ]
+  }
+  ]
+  }
+
+
