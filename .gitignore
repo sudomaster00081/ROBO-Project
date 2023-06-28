@@ -3,3 +3,6 @@ Face_recognition/Object-Detection/yolov3.weights
 Face_recognition copy/MIX/yolov3.weights
 Face_recognition copy/Object-Detection/yolov3.weights
 FR-Robot/Face_recognition copy/MIX/shape_predictor_68_face_landmarks.dat
+__pycache__
+Face_recognition/__pycache__/
+voicetotext/__pycache__/
