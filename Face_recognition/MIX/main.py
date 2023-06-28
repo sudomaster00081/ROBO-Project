@@ -6,8 +6,8 @@ from Face_recognition.MIX import completewrking
 
 def main():
     # Load YOLO
-    yolov3_config = "Face_recognition/MIX/yolov3.cfg"
-    yolov3_weights = "Face_recognition/MIX/yolov3.weights"
+    yolov3_config = "/home/softtechi007/Documents/FR-Robot/Face_recognition/MIX/yolov3.cfg"
+    yolov3_weights = "/home/softtechi007/Documents/FR-Robot/Face_recognition/MIX/yolov3.weights"
     net = cv2.dnn.readNet(yolov3_weights, yolov3_config)
 
     # Get output layer names
@@ -22,7 +22,7 @@ def main():
 
     # Load face detector and landmarks predictor from dlib
     face_detector = dlib.get_frontal_face_detector()
-    shape_predictor_path = "Face_recognition/MIX/shape_predictor_68_face_landmarks.dat"
+    shape_predictor_path = "/home/softtechi007/Documents/FR-Robot/Face_recognition/MIX/shape_predictor_68_face_landmarks.dat"
     landmark_predictor = dlib.shape_predictor(shape_predictor_path)
 
     # Start video capture
