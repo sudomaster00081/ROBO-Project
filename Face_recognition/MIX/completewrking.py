@@ -88,7 +88,9 @@ def identify_faces(known_face_embeddings, known_face_names, image):
 #COUNT PART
 def find_largest_repeating(names):
     counts = Counter(names)
+    print(counts)
     max_name, max_count = counts.most_common(1)[0]
+    print(max_name,max_count)
     
     if max_name == 'Unknown' and max_count == 20:
         print ("\nUNKNOWN PERSON Welcome\n")
