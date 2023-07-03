@@ -26,7 +26,7 @@ def main():
     landmark_predictor = dlib.shape_predictor(shape_predictor_path)
 
     # Start video capture
-    cap = cv2.VideoCapture(2)  # 0 for the default webcam, change if needed
+    cap = cv2.VideoCapture(0)  # 0 for the default webcam, change if needed
 
     def eye_aspect_ratio(landmarks):
         landmarks_array = np.array([[landmark.x, landmark.y] for landmark in landmarks.parts()])

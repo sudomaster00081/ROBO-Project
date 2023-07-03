@@ -116,7 +116,7 @@ def find_largest_repeating(names):
 
 def main1():
     known_face_embeddings, known_face_names = load_known_faces()
-    cap = cv2.VideoCapture(2)
+    cap = cv2.VideoCapture(0)
 
     prev_x, prev_y = None, None
     person_names = []
