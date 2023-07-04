@@ -100,13 +100,14 @@ def find_largest_repeating(names):
     if max_count > 15 and max_name != 'Unknown':
         accuracyrate = max_count * 5
         print(f"\n\nPerson Identified as : '{max_name}' With Accuracy {accuracyrate} %.\n")
+        
         # text_to_speech(f"Person Identified as :{max_name} With Accuracy {accuracyrate} Percentage")
         return (max_name)
         # exit()
     else:
         print("\n\nPerson Unidentified-----Please Come Closer :\n")
         text_to_speech("Person Unidentified-----Please Come Closer :")
-        return main1()
+        return ("interrupt")
 
 
 
@@ -129,7 +130,7 @@ def main1():
 
         face_recognition_status, person_name, start_x, start_y = identify_faces(
             known_face_embeddings, known_face_names, frame)
-
+        
         if face_recognition_status:
             # Known person recognized
             #print("Person identified:", person_name )
@@ -147,6 +148,10 @@ def main1():
         
         
     person = find_largest_repeating(person_names)
+    if person == "interrupt":
+            cap.release()
+            cv2.destroyAllWindows()
+            return main1()
         
     cap.release()
     cv2.destroyAllWindows()
