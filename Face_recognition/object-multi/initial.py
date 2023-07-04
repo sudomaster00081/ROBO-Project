@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import dlib
 # import completewrking
-from Face_recognition.MIX import completewrking
+# from Face_recognition.MIX import completewrking
 
 def main():
     # Load YOLO
@@ -117,7 +117,7 @@ def main():
                         print("Person Detected\nInitiating.......")
                         cap.release()
                         cv2.destroyAllWindows()
-                        person_name = completewrking.main1()
+                        person_name = "one person" #completewrking.main1()
                         # main()
                         return person_name
 
