@@ -1,0 +1,7 @@
+opencv-python
+dlib
+mediapipe
+face-recognition
+numpy
+scikit-learn
+joblib
