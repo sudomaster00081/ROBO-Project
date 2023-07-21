@@ -54,7 +54,7 @@ def generate_embedding(cropped_image, bgr=False):
 
 
 def load_known_faces():
-    #path
+    
     face_embeddings_path = "face_embeddings.npz"
 
 
@@ -74,6 +74,7 @@ def identify_faces(known_face_embeddings, known_face_names, image):
         min_distance = face_distances[min_distance_index]
         if min_distance < 0.5:
             # Face recognized as a known person
+            print(min_distance)
             return True, known_face_names[min_distance_index], start_x, start_y
         else:
             # Unknown face
@@ -90,7 +91,7 @@ def find_largest_repeating(names):
     counts = Counter(names)
     print(counts)
     max_name, max_count = counts.most_common(1)[0]
-    print(max_name,max_count)
+    # print(max_name,max_count)
     
     if max_name == 'Unknown' and max_count == 20:
         print ("\nUNKNOWN PERSON Welcome\n")

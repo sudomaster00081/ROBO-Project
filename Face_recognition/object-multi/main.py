@@ -2,12 +2,12 @@ import cv2
 import numpy as np
 import dlib
 # import completewrking
-from Face_recognition.MIX import completewrking
+#from Face_recognition.MIX import completewrking
 
 def main():
     # Load YOLO
-    yolov3_config = "yolov3.cfg"
-    yolov3_weights = "yolov3.weights"
+    yolov3_config = "Face_recognition/MIX/yolov3.cfg"
+    yolov3_weights = "Face_recognition/MIX/yolov3.weights"
     net = cv2.dnn.readNet(yolov3_weights, yolov3_config)
 
     # Get output layer names
@@ -47,8 +47,6 @@ def main():
         # Average the eye aspect ratios of both eyes
         ear = (left_ear + right_ear) / 2.0
         return ear
-
-
 
     while True:
         ret, frame = cap.read()
@@ -99,6 +97,9 @@ def main():
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 faces = face_detector(gray)
 
+                # Initialize a list to store eye aspect ratios for each detected face
+                ear_list = []
+
                 # Iterate over detected faces
                 for face in faces:
                     # Predict face landmarks
@@ -111,16 +112,23 @@ def main():
                     # Calculate eye aspect ratio
                     ear = eye_aspect_ratio(landmarks)
 
-
                     # Check if the person is looking
                     if ear > 0.2:  # Adjust the threshold as needed
                         print("Person Detected\nInitiating.......")
                         cap.release()
                         cv2.destroyAllWindows()
-                        person_name = completewrking.main1()
+                        # person_name = completewrking.main1()
                         # main()
-                        return person_name
+                        ear_list.append(ear)
 
+                # Check if multiple persons are looking
+                if len(ear_list) > 1:
+                    print("Multiple persons looking...")
+                    return 5
+                elif len(ear_list) == 1:
+                    print("One person looking...")
+                    
+                    return 1
 
         # Detect entering and leaving events
         if count > 0:
@@ -146,6 +154,8 @@ def main():
             break
 
     # Release the video capture and close the windows
+    cap.release()
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
