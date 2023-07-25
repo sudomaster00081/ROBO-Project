@@ -6,10 +6,13 @@ from textTovoice.voice import text_to_speech_speed
 import time
 
 person_name = main.main()
+print (person_name)
 text_to_speech_speed("I am UP....", 100 )
 while True :
-    recognizedText = SR.speech()
-    if person_name != None:
+    recognizedText =  SR.speech()
+    if person_name == "multiple":
+        bot_response = "Hello Multiple people" 
+    elif person_name != None:
         bot_response = chatbot.chatKnown(message=recognizedText, name= person_name)
     else:   
         bot_response = chatbot.chat(message=recognizedText)

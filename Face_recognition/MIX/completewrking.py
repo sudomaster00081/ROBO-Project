@@ -24,6 +24,8 @@ def text_to_speech(text):
 
 # person_names = []
 
+
+
 class MpDetector:
     def __init__(self):
         self.detector = mp.solutions.face_detection.FaceDetection(
@@ -111,6 +113,22 @@ def find_largest_repeating(names):
 
 
 
+#Multiple face Check
+# Function to check multiple people looking into the camera
+
+def detect_faces(frame):
+    # Load the pre-trained Haar Cascade Classifier for face detection
+    harpath = "haarcascade_frontalface_default.xml"
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + harpath)
+
+    # Convert the frame to grayscale for face detection
+    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Detect faces in the frame
+    faces = face_cascade.detectMultiScale(gray_frame, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+    return len(faces)
+
 
 
 
@@ -127,7 +145,8 @@ def main1():
         ret, frame = cap.read()
         if not ret:
             break
-
+        # num_persons = detect_faces(frame)
+        # print(num_persons, " no of persons")
         face_recognition_status, person_name, start_x, start_y = identify_faces(
             known_face_embeddings, known_face_names, frame)
         
@@ -145,7 +164,14 @@ def main1():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
         print(f"Recognizing....: {i*5} %", end="\r")
+    num_persons = detect_faces(frame)
+    print(num_persons, " no of persons")
+    if num_persons > 1:
+        # print("multiple")
+        cap.release()
+        cv2.destroyAllWindows()
         
+        return("multiple")
         
     person = find_largest_repeating(person_names)
     if person == "interrupt":

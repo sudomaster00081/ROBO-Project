@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import os
 from collections import Counter
-import dlib
+
 
 
 ####LOADINGSCREEN
@@ -21,34 +21,8 @@ def text_to_speech(text):
     engine.say(text)
     engine.runAndWait()
 
-    # Load face detector and landmarks predictor from dlib
-face_detector = dlib.get_frontal_face_detector()
-shape_predictor_path = "Face_recognition/MIX/shape_predictor_68_face_landmarks.dat"
-landmark_predictor = dlib.shape_predictor(shape_predictor_path)
+
 # person_names = []
-
-
-def eye_aspect_ratio(landmarks):
-    landmarks_array = np.array([[landmark.x, landmark.y] for landmark in landmarks.parts()])
-
-    left_eye = landmarks_array[36:42]  # Extract the landmarks for the left eye
-    right_eye = landmarks_array[42:48]  # Extract the landmarks for the right eye
-
-    # Calculate eye aspect ratio for the left eye
-    left_eye_width = np.linalg.norm(left_eye[0] - left_eye[3])
-    left_eye_height = np.linalg.norm((left_eye[1] + left_eye[2]) / 2 - left_eye[4])
-    left_ear = left_eye_height / left_eye_width
-
-    # Calculate eye aspect ratio for the right eye
-    right_eye_width = np.linalg.norm(right_eye[0] - right_eye[3])
-    right_eye_height = np.linalg.norm((right_eye[1] + right_eye[2]) / 2 - right_eye[4])
-    right_ear = right_eye_height / right_eye_width
-
-    # Average the eye aspect ratios of both eyes
-    ear = (left_ear + right_ear) / 2.0
-    return ear
-
-
 
 
 
@@ -82,8 +56,8 @@ def generate_embedding(cropped_image, bgr=False):
 
 
 def load_known_faces():
-    
-    face_embeddings_path = "Face_recognition\multi-facerecognition\face_embeddings.npz"
+    #path
+    face_embeddings_path = "Face_recognition/MIX/face_embeddings.npz"
 
 
     known_face_data = np.load(face_embeddings_path)
@@ -102,7 +76,6 @@ def identify_faces(known_face_embeddings, known_face_names, image):
         min_distance = face_distances[min_distance_index]
         if min_distance < 0.5:
             # Face recognized as a known person
-            print(min_distance)
             return True, known_face_names[min_distance_index], start_x, start_y
         else:
             # Unknown face
@@ -119,7 +92,7 @@ def find_largest_repeating(names):
     counts = Counter(names)
     print(counts)
     max_name, max_count = counts.most_common(1)[0]
-    # print(max_name,max_count)
+    print(max_name,max_count)
     
     if max_name == 'Unknown' and max_count == 20:
         print ("\nUNKNOWN PERSON Welcome\n")
@@ -140,95 +113,78 @@ def find_largest_repeating(names):
 
 
 
-# Function to identify faces and count the number of faces looking at the camera
-def identify_faces_with_ear(known_face_embeddings, known_face_names, image):
-    detector = MpDetector()
-    face_detection_status, face_crop, start_x, start_y = detector.detect(image, True)
-    if face_detection_status:
-        # Known person recognized
-        current_face_embedding = generate_embedding(np.array(face_crop))
-        face_distances = face_recognition.face_distance(known_face_embeddings, current_face_embedding)
-        min_distance_index = np.argmin(face_distances)
-        min_distance = face_distances[min_distance_index]
-        if min_distance < 0.5:
-            # Face recognized as a known person
-            return True, known_face_names[min_distance_index], start_x, start_y
-        else:
-            # Unknown face
-            unk = "Unknown"
-            return True, unk, None, None
-    else:
-        # No face detected
-        return False, None, None, None
+#Multiple face Check
+# Function to check multiple people looking into the camera
+
+def detect_faces(frame):
+    # Load the pre-trained Haar Cascade Classifier for face detection
+    harpath = "haarcascade_frontalface_default.xml"
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + harpath)
+
+    # Convert the frame to grayscale for face detection
+    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Detect faces in the frame
+    faces = face_cascade.detectMultiScale(gray_frame, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
+
+    return len(faces)
 
 
 
 
-# Update the main loop with EAR functionality and person count check
-def main3():
+
+
+def main1():
     known_face_embeddings, known_face_names = load_known_faces()
     cap = cv2.VideoCapture(0)
 
     prev_x, prev_y = None, None
     person_names = []
-    i = 0
-
+    i = 0 
     while i < 20:
         ret, frame = cap.read()
         if not ret:
             break
-
-        # Check EAR for each face in the frame
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        faces = face_detector(gray)
-
-        faces_looking_at_camera = 0
-
-        # Iterate over detected faces
-        for face in faces:
-            # Predict face landmarks
-            landmarks = landmark_predictor(gray, face)
-
-            # Determine if the person is looking at the camera
-            ear = eye_aspect_ratio(landmarks)
-
-            # Threshold to consider if the person is looking at the camera
-            if ear >= 0.2:  # You can adjust the threshold as per your requirement
-                faces_looking_at_camera += 1
-
-        # If more than one face is looking at the camera, print "Hi all" and continue
-        if faces_looking_at_camera > 1:
-            print("Hi all")
-            continue
-
-        # If only one face is looking at the camera, perform face recognition
-        if faces_looking_at_camera == 1:
-            face_recognition_status, person_name, start_x, start_y = identify_faces_with_ear(
-                known_face_embeddings, known_face_names, frame)
-
-            if face_recognition_status:
-                person_names.append(person_name)
-                i += 1
+        # num_persons = detect_faces(frame)
+        # print(num_persons, " no of persons")
+        face_recognition_status, person_name, start_x, start_y = identify_faces(
+            known_face_embeddings, known_face_names, frame)
+        
+        if face_recognition_status:
+            # Known person recognized
+            #print("Person identified:", person_name )
+            person_names.append(person_name)
+            i = i + 1
+            # print(i)
+            # You can perform further actions here, such as displaying the person's name, etc.
 
         prev_x, prev_y = start_x, start_y
 
         cv2.imshow("Face Recognition", frame)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
-        print(f"Recognizing....: {i * 5} %", end="\r")
-
-    person = find_largest_repeating(person_names)
-    if person == "interrupt":
+        print(f"Recognizing....: {i*5} %", end="\r")
+    num_persons = detect_faces(frame)
+    print(num_persons, " no of persons")
+    if num_persons > 1:
+        # print("multiple")
         cap.release()
         cv2.destroyAllWindows()
-        return main3()
-
+        
+        return("multiple")
+        
+    person = find_largest_repeating(person_names)
+    if person == "interrupt":
+            cap.release()
+            cv2.destroyAllWindows()
+            return main1()
+        
     cap.release()
     cv2.destroyAllWindows()
     return person
 
 
 if __name__ == "__main__":
-    main3()
+    main1()
 # print(person_names)
 print("\nFingers Are Crossed....🤞")
