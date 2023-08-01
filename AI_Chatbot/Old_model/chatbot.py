@@ -69,7 +69,11 @@ def chat(message : str):
     message = message.lower()
     res = chatbot.request(message)
     botReply = res[0]
-    return botReply
+    replyIntent = res[1][0]
+    intent = replyIntent["intent"]
+    
+
+    return botReply, intent
 
 def chatKnown(message : str, name):
     chatbot = ChatBot()
@@ -79,11 +83,12 @@ def chatKnown(message : str, name):
     res = chatbot.request(message)
     botReply = res[0] 
     replyIntent = res[1][0]
+    intent = replyIntent["intent"]
 
-    if(replyIntent['intent']=='greeting'):
+    if(intent=='greeting'):
         botReply += " " + name 
 
-    return botReply
+    return botReply, intent
 
 
 #chatbot.py driver code
@@ -99,6 +104,7 @@ if __name__ == '__main__':
         replyIntent = res[1][0]
 
         name = "Person"
+        intent = replyIntent["intent"]
         if(replyIntent['intent']=='greeting'):
             botReply += " " + name
         

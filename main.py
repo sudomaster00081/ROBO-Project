@@ -17,7 +17,10 @@ while True :
     else:   
         bot_response = chatbot.chat(message=recognizedText)
 
+    bot_reply = bot_response[0]
+    reply_intent = bot_response[1] #Could be used for signal propogation only if reply_intent is "greeting"
+
     print('YOU : ',recognizedText)
     time.sleep(2)
-    print('Bot : ', bot_response)
-    text_to_speech(bot_response)
+    print('Bot : ', bot_reply)
+    text_to_speech(bot_reply)

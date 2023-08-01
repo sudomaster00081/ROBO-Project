@@ -11,7 +11,7 @@ from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('AI_Chatbot/Old_model/intents.json').read())
 
 words = []
 classes = []
@@ -33,8 +33,8 @@ words = sorted(set(words))
 
 classes = sorted(set(classes))
 
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+pickle.dump(words, open('AI_Chatbot/Old_model/words.pkl', 'wb'))
+pickle.dump(classes, open('AI_Chatbot/Old_model/classes.pkl', 'wb'))
 
 training = []
 output_empty = [0] * len(classes)
@@ -71,7 +71,7 @@ sgd = SGD(learning_rate=0.01,   momentum = 0.9, nesterov = True)
 model.compile(loss='categorical_crossentropy', optimizer = sgd, metrics = ['accuracy'])
 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('chatbotmodel.h5',hist)
+model.save('AI_Chatbot/Old_model/chatbotmodel.h5',hist)
 
 print('Done ')
     
