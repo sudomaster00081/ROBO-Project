@@ -11,7 +11,7 @@ text_to_speech_speed("I am UP....", 100 )
 while True :
     recognizedText =  SR.speech()
     if person_name == "multiple":
-        bot_response = "Hello Multiple people" 
+        bot_response = ("Hello Multiple people", "greeting")
     elif person_name != None:
         bot_response = chatbot.chatKnown(message=recognizedText, name= person_name)
     else:   
