@@ -163,7 +163,7 @@
       "who designed you"
    ],
    "responses": [
-      "College students"
+      "Students of Department of Computer science, Kerala University"
    ],
    "context_set": ""
 },
@@ -185,9 +185,8 @@
       "what are you"
    ],
    "responses": [
-      "You can call me Mind Reader.",
-      "I'm Mind Reader",
-      "I am a Chatbot.",
+      "You can call me Robo.",
+      "I'm FR - Robot",
       "I am your helper"
    ],
    "context_set": ""
@@ -214,7 +213,7 @@
       "timing college"
    ],
    "responses": [
-      "College is open 8am-5pm Monday-Saturday!"
+      "Department is open 9 am-4:30 pm Monday-Friday!"
    ],
    "context_set": ""
 },
@@ -274,7 +273,7 @@
       "Civil engineering"
    ],
    "responses": [
-      "Our university offers Information Technology, computer Engineering, Mechanical engineering,Chemical engineering, Civil engineering and extc Engineering."
+      "Our university offers Masters in Computer Science, Computer science with specialization in Artificial Intelligence, Machine learning and M.tech in Digital image processing."
    ],
    "context_set": ""
 },
@@ -360,7 +359,7 @@
       "distance between hostel and college"
    ],
    "responses": [
-      "For hostel detail visit <a target=\"_blank\" href=\"ADD YOUR HOSTEL DETAIL PDF LINK OR ANY INFORMATION LINK OR ADD YOU OWN ANSWERS\"> here</a>"
+      "For hostel detail visit <link>"
    ],
    "context_set": ""
 },
@@ -418,7 +417,7 @@
       "floors"
    ],
    "responses": [
-      "My College has total 2 floors "
+      "Department is three-storey building "
    ],
    "context_set": ""
 },
@@ -494,22 +493,6 @@
    "context_set": ""
 },
  {
-   "tag": "menu",
-   "patterns": [
-      "food menu",
-      "food in canteen",
-      "Whats there on menu",
-      "what is available in college canteen",
-      "what foods can we get in college canteen",
-      "food variety",
-      "What is there to eat?"
-   ],
-   "responses": [
-      "we serve Franky, Locho, Alu-puri, Kachori, Khavsa, Thaali and many more on menu"
-   ],
-   "context_set": ""
-},
- {
    "tag": "placement",
    "patterns": [
       "What is college placement",
@@ -536,52 +519,12 @@
       "name of it hod"
    ],
    "responses": [
-      "All engineering departments have only one hod XYZ who available on (Place name)"
+      "HOD of this Department Dr. Muhammed Noorul Mubarak"
    ],
    "context_set": ""
 },
- {
-   "tag": "computerhod",
-   "patterns": [
-      "Who is computer HOD",
-      "Where is computer HOD",
-      "computer hod",
-      "name of computer hod"
-   ],
-   "responses": [
-      "All engineering departments have only one hod XYZ who available on (PLACE NAME)"
-   ],
-   "context_set": ""
-},
- {
-   "tag": "extchod",
-   "patterns": [
-      "Who is extc HOD",
-      "Where is  extc HOD",
-      "extc hod",
-      "name of extc hod"
-   ],
-   "responses": [
-      "Different school wise hod are different.So be more clear with your school or department"
-   ],
-   "context_set": ""
-},
- {
-   "tag": "principal",
-   "patterns": [
-      "what is the name of principal",
-      "whatv is the principal name",
-      "principal name",
-      "Who is college principal",
-      "Where is principal's office",
-      "principal",
-      "name of principal"
-   ],
-   "responses": [
-      "XYZ is college principal and if you need any help then call your branch hod first.That is more appropriate"
-   ],
-   "context_set": ""
-},
+
+ 
  {
    "tag": "sem",
    "patterns": [
@@ -622,12 +565,6 @@
    "patterns": [
       "scholarship",
       "Is scholarship available",
-      "scholarship engineering",
-      "scholarship it",
-      "scholarship ce",
-      "scholarship mechanical",
-      "scholarship civil",
-      "scholarship chemical",
       "scholarship for AI/ML",
       "available scholarships",
       "scholarship for computer engineering",
@@ -635,18 +572,8 @@
       "scholarship for mechanical engineering",
       "scholarship for civil engineering",
       "scholarship for chemical engineering",
-      "list of scholarship",
-      "comps scholarship",
-      "IT scholarship",
-      "mechanical scholarship",
-      "civil scholarship",
-      "chemical scholarship",
-      "automobile scholarship",
-      "first year scholarship",
-      "second year scholarship",
-      "third year scholarship",
-      "fourth year scholarship"
-   ],
+      "list of scholarship"
+      ],
    "responses": [
       "Many government scholarships are supported by our university. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
    ],
@@ -839,22 +766,11 @@
       "ragging incidents"
    ],
    "responses": [
-      "We are Proud to tell you that our college provides ragging free environment, and we have strict rules against ragging"
+      "We are Proud to tell you that our Department provides ragging free environment, and we have strict rules against ragging"
    ],
    "context_set": ""
 },
- {
-   "tag": "hod",
-   "patterns": [
-      "hod",
-      "hod name",
-      "who is the hod"
-   ],
-   "responses": [
-      "HODs differ for each branch, please be more specific like: (HOD it)"
-   ],
-   "context_set": ""
-},
+
 {
    "tag": "datetime",
          "patterns": [
