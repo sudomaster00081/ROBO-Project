@@ -128,7 +128,7 @@
               "I need your help, please"
           ],
           "responses": [
-              "I am a general purpose chatbot. My capabilities are : \n 1. I can chat with you. Try asking me for jokes or riddles! \n 2. Ask me the date and time \n Thank you!! "
+              ""
           ]
 },
 {
@@ -328,7 +328,7 @@
       "location"
    ],
    "responses": [
-      "<a target=\"_blank\" href=\"ADD YOU GOOGLE MAP LINK HERE\"> here</a>"
+      "<link to google map>"
    ],
    "context_set": ""
 },
@@ -417,7 +417,7 @@
       "floors"
    ],
    "responses": [
-      "Department is three-storey building "
+      "Department is three-storey building."
    ],
    "context_set": ""
 },
@@ -519,7 +519,7 @@
       "name of it hod"
    ],
    "responses": [
-      "HOD of this Department Dr. Muhammed Noorul Mubarak"
+      "HOD of Department of computer science is : Dr. Muhammed Noorul Mubarak"
    ],
    "context_set": ""
 },
@@ -541,7 +541,7 @@
       "when is semester"
    ],
    "responses": [
-      "Here is the Academic Calendar  <a target=\"_blank\" href=\"YOUR ACADEMIC CALENDER\">website</a>"
+      "Here is the Academic Calendar  <link to YOUR ACADEMIC CALENDER>"
    ],
    "context_set": ""
 },
@@ -575,7 +575,7 @@
       "list of scholarship"
       ],
    "responses": [
-      "Many government scholarships are supported by our university. For details and updates visit <a target=\"_blank\" href=\"(SCHOLARSHIP DETAILS LINK)\">here</a>"
+      "Many government scholarships are supported by our university. For details and updates visit <link for scholarship>"
    ],
    "context_set": ""
 },
@@ -607,7 +607,7 @@
       "seats"
    ],
    "responses": [
-      "For IT, Computer and extc 60 per branch and seat may be differ for different department."
+      "Total 60 seats are available in this department, which is considered from 30 seats of CS, 20 Seats of AI and 10 Seats of ML."
    ],
    "context_set": ""
 },
