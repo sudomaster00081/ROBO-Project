@@ -1,0 +1,458 @@
+{
+   "intents":[
+      {
+         "tag":"no_answer",
+         "patterns":[
+            "",
+            " ",
+            "None",
+            "none",
+            "non"
+         ],
+         "responses":[
+            "Sorry, I can't understand you."
+         ]
+      },
+      {
+         "tag":"greeting",
+         "patterns":[
+            "Hi there",
+            "What's up?",
+            "Is anyone there?",
+            "Hey",
+            "Hola",
+            "Hello",
+            "Good day",
+            "Namaste",
+            "Hello!",
+            "Hey!",
+            "Hiya!",
+            "Greetings!",
+            "Good day!",
+            "Howdy!",
+            "Salutations!",
+            "What's up?",
+            "Yo!",
+            "Hi, friend!",
+            "Hey, buddy!",
+            "Hello, folks!",
+            "Nice to see you!",
+            "Good morning",
+            "Nice to meet you",
+            "hi",
+            "Howdy!",
+            "Hey there, stranger!",
+            "Hi, friend!",
+            "Hi, pal!",
+            "who am i"
+         ],
+         "responses":[
+            "Hello",
+            "Good to see you again",
+            "Hi there"
+         ]
+      },
+      {
+         "tag":"how_are_you",
+         "patterns":[
+            "How are you",
+            "How is it going?",
+            "How you ?",
+            "Are you fine?",
+            "How you doing ?",
+            "How are things with you?",
+            "How are you feeling today?",
+            "How are you doing today?",
+            "How's everything?",
+            "How's your day going?",
+            "How are things?",
+            "How have you been?",
+            "what about you ?",
+            "How are you feeling?",
+            "How are things with you?"
+         ],
+         "responses":[
+            "I am fine",
+            "Fine",
+            "I am fine... thanks",
+            "Good",
+            "Not bad",
+            "Going well."
+         ]
+      },
+      {
+         "tag":"thanks",
+         "patterns":[
+            "Thank you",
+            "Thanks",
+            "Thank you very much",
+            "Thanks a lot",
+            "Thanks very much",
+            "Thank you for your service",
+            "Thanks for everything",
+            "That's helpful",
+            "Awesome, thanks",
+            "Thanks for helping me",
+            "Thanks a lot!",
+            "Many thanks!",
+            "I appreciate it!",
+            "Thank you kindly!",
+            "I'm grateful!",
+            "Thanks a ton!",
+            "That's very kind of you!",
+            "Thank you so much!",
+            "I can't thank you enough!",
+            "Thank you for your help, generosity, and kindness."
+         ],
+         "responses":[
+            "Happy to help!",
+            "Any time!",
+            "My pleasure"
+         ]
+      },
+      {
+         "tag":"options",
+         "patterns":[
+            "How you could help me?",
+            "What you can do?",
+            "What help you provide?",
+            "How you can be helpful?",
+            "What support is offered",
+            "Can you assist me?",
+            "I need some help",
+            "I'm in trouble, can you help?",
+            "Please help me out",
+            "I need your help, please"
+         ],
+         "responses":[
+            "I'm here to provide information and assistance about Department of Computer Science at University of Kerala, Karyavattam Campus. Feel free to ask me about courses, facilities, admissions, and more!"
+         ]
+      },
+      {
+         "tag":"goodbye",
+         "patterns":[
+
+         ],
+         "responses":[
+            "See you!",
+            "Have a nice day",
+            "Bye! Come back again soon."
+         ]
+      },
+      {
+         "tag":"creator",
+         "patterns":[
+            "what is the name of your developers",
+            "what is the name of your creators",
+            "what is the name of the developers",
+            "what is the name of the creators",
+            "who created you",
+            "your developers",
+            "your creators",
+            "who are your developers",
+            "developers",
+            "you are made by",
+            "you are made by whom",
+            "who created you",
+            "who create you",
+            "creators",
+            "who made you",
+            "who designed you"
+         ],
+         "responses":[
+            "FR-Robot was developed by students of the Department of Computer Science at University of Kerala, Karyavattam Campus."
+         ]
+      },
+      {
+         "tag":"name",
+         "patterns":[
+            "name",
+            "your name",
+            "do you have a name",
+            "what are you called",
+            "what is your name",
+            "what should I call you",
+            "whats your name?",
+            "what are you",
+            "who are you",
+            "who is this",
+            "what am i chatting to",
+            "who am i talking to",
+            "what are you"
+         ],
+         "responses":[
+            "You can call me FR-Robot. How can I assist you today?"
+         ]
+      },
+      {
+         "tag":"hours",
+         "patterns":[
+            "timing of college",
+            "what is college timing",
+            "working days",
+            "when are you guys open",
+            "what are your hours",
+            "hours of operation",
+            "when is the college open",
+            "college timing",
+            "what about college timing",
+            "is college open on Saturday",
+            "tell something about college timing",
+            "what is the college hours",
+            "when should I come to college",
+            "when should I attend college",
+            "what is my college time",
+            "college timing",
+            "timing college"
+         ],
+         "responses":[
+            "The Department of Computer Science is open from 9 am to 4:30 pm, Monday to Friday."
+         ]
+      },
+      {
+         "tag":"number",
+         "patterns":[
+            "more info",
+            "contact info",
+            "how to contact college",
+            "college telephone number",
+            "college number",
+            "What is your contact no",
+            "Contact number?",
+            "how to call you",
+            "College phone no?",
+            "how can I contact you",
+            "Can I get your phone number",
+            "how can I call you",
+            "phone number",
+            "phone no",
+            "call"
+         ],
+         "responses":[
+            "You can contact us at: [PHONE NUMBER]"
+         ]
+      },
+      {
+         "tag":"course",
+         "patterns":[
+            "list of courses",
+            "list of courses offered",
+            "list of courses offered in",
+            "what are the courses offered in your college?",
+            "courses?",
+            "courses offered",
+            "courses offered in Department of Computer Science",
+            "courses you offer",
+            "branches?",
+            "courses available at Department of Computer Science?",
+            "branches available at your college?",
+            "what are the courses in Department of Computer Science?",
+            "what are branches in Department of Computer Science?",
+            "what are courses in Department of Computer Science?",
+            "branches available in Department of Computer Science?",
+            "can you tell me the courses available in Department of Computer Science?",
+            "can you tell me the branches available in Department of Computer Science?",
+            "computer engineering?",
+            "computer",
+            "Computer engineering?",
+            "IT",
+            "Information Technology",
+            "AI/ML",
+            "Mechanical engineering",
+            "Chemical engineering",
+            "Civil engineering"
+         ],
+         "responses":[
+            "Department of Computer Science offers Masters in Computer Science, Computer Science with specialization in Artificial Intelligence, Machine Learning, and M.Tech in Digital Image Processing."
+         ]
+      },
+      {
+         "tag":"fees",
+         "patterns":[
+            "information about fee",
+            "information on fee",
+            "tell me the fee",
+            "college fee",
+            "fee per semester",
+            "what is the fee of each semester",
+            "what is the fees of each year",
+            "what is fee",
+            "what is the fees",
+            "how much is the fees",
+            "fees for first year",
+            "fees",
+            "about the fees",
+            "tell me something about the fees",
+            "What is the fees of hostel",
+            "how much is the fees",
+            "hostel fees",
+            "fees for AC room",
+            "fees for non-AC room",
+            "fees for AC room for girls",
+            "fees for non-AC room for girls",
+            "fees for AC room for boys",
+            "fees for non-AC room for boys"
+         ],
+         "responses":[
+            "For detailed fee information, please visit [LINK TO FEE DETAILS]."
+         ]
+      },
+      {
+         "tag":"location",
+         "patterns":[
+            "where is the college located",
+            "college is located at",
+            "where is college",
+            "where is college located",
+            "address of college",
+            "how to reach college",
+            "college location",
+            "college address",
+            "where's the college",
+            "how can I reach college",
+            "what is the college address",
+            "what is the address of college",
+            "address",
+            "location"
+         ],
+         "responses":[
+            "Department of Computer Science is located at [ADDRESS]. You can find us on Google Maps [LINK TO GOOGLE MAPS]."
+         ]
+      },
+      {
+         "tag":"hostel",
+         "patterns":[
+            "hostel facility",
+            "hostel service",
+            "hostel location",
+            "hostel address",
+            "hostel facilities",
+            "hostel fees",
+            "Does college provide hostel",
+            "Is there any hostel",
+            "Where is hostel",
+            "do you have hostel",
+            "do you guys have hostel",
+            "hostel",
+            "hostel capacity",
+            "what is the hostel fee",
+            "how to get in hostel",
+            "what is the hostel address",
+            "how far is hostel from college",
+            "hostel college distance",
+            "where is the hostel",
+            "how big is the hostel",
+            "distance between college and hostel",
+            "distance between hostel and college"
+         ],
+         "responses":[
+            "Yes, we provide hostel facilities for students. For more details, visit [LINK TO HOSTEL INFORMATION]."
+         ]
+      },
+      {
+         "tag":"event",
+         "patterns":[
+            "events organized",
+            "list of events",
+            "list of events organized in college",
+            "list of events conducted in college",
+            "What events are conducted in college",
+            "Are there any events held at college",
+            "Events?",
+            "functions",
+            "what are the events",
+            "tell me about events",
+            "what about events"
+         ],
+         "responses":[
+            "Stay updated about upcoming events and activities at Department of Computer Science by visiting [LINK TO EVENTS PAGE]."
+         ]
+      },
+      {
+         "tag":"document",
+         "patterns":[
+            "documents to bring",
+            "documents needed for admission",
+            "documents needed at the time of admission",
+            "documents needed during admission",
+            "documents required for admission",
+            "documents required at the time of admission",
+            "documents required during admission",
+            "What documents are required for admission",
+            "Which documents to bring for admission",
+            "documents",
+            "what documents do I need",
+            "what documents do I need for admission",
+            "documents needed"
+         ],
+         "responses":[
+            "To know more about the documents required for admission, please visit [LINK TO ADMISSION DOCUMENTS]."
+         ]
+      },
+      {
+         "tag":"floors",
+         "patterns":[
+            "size of campus",
+            "building size",
+            "How many floors does college have",
+            "floors in college",
+            "how tall is the Department of Computer Science building",
+            "how many floors are there in the Department of Computer Science building",
+            "Department of Computer Science building floors",
+            "campus size",
+            "how many floors in college"
+         ],
+         "responses":[
+            "The Department of Computer Science building has [NUMBER OF FLOORS] floors."
+         ]
+      },
+      {
+         "tag":"professors",
+         "patterns":[
+            "faculty",
+            "teaching staff",
+            "professors",
+            "lecturers",
+            "Department of Computer Science faculty",
+            "teaching faculty",
+            "faculty members",
+            "professors in Department of Computer Science",
+            "faculty at college",
+            "lecturers at college",
+            "teaching staff at college",
+            "faculty members at college",
+            "professors in your college",
+            "teaching faculty in your college",
+            "faculty at Department of Computer Science",
+            "faculty at your college"
+         ],
+         "responses":[
+            "Department of Computer Science has a dedicated team of experienced and knowledgeable faculty members who are passionate about teaching and research. You can learn more about our faculty members by visiting [LINK TO FACULTY PAGE]."
+         ]
+      },
+      {
+         "tag":"admission_process",
+         "patterns":[
+            "how to get admission",
+            "admission process",
+            "how can I join",
+            "admission procedure",
+            "steps for admission",
+            "how to apply for admission",
+            "what is the process of admission",
+            "how to get into college",
+            "admission criteria",
+            "what are the admission requirements",
+            "how can I get admission in Department of Computer Science",
+            "what is the admission process",
+            "eligibility criteria",
+            "what is the eligibility for admission",
+            "how to apply for courses",
+            "admission details"
+         ],
+         "responses":[
+            "To learn about the admission process, eligibility criteria, and how to apply for courses, please visit [LINK TO ADMISSION PROCESS]."
+         ]
+      }
+   ]
+}
