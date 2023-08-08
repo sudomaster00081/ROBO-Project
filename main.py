@@ -25,7 +25,7 @@ while True :
         bot_response = chatbot.chat(message=recognizedText)
 
     bot_reply = bot_response[0]
-    reply_intent = bot_response[1] # Greeting Trigger inducer : Could be used for signal propogation only if reply_intent is "greeting"
+    reply_intent = bot_response[1] # intent trigger
     
     #function to perform action assigned to each intent
     try:
