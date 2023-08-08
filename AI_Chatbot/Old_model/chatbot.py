@@ -6,6 +6,8 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
+from intentLib import intentAction
+
 lemmatizer = WordNetLemmatizer()
 
 
@@ -105,7 +107,9 @@ if __name__ == '__main__':
 
         name = "Person"
         intent = replyIntent["intent"]
-        if(replyIntent['intent']=='greeting'):
+        if(intent=='greeting'):
             botReply += " " + name
         
         print("bot: ", botReply)
+
+        
