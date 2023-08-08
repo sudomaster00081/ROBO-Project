@@ -37,8 +37,8 @@ class ChatBot:
         res = self.model.predict(np.array([bow]))[0]
         ERROR_THRESHOLD = 0.25
         results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
-
         results.sort(key=lambda x: x[1], reverse=True)
+        print(results)
         return_list = []
         for r in results:
             return_list.append({'intent': self.classes[r[0]], 'probability': str(r[1])})
@@ -87,7 +87,7 @@ def chatKnown(message : str, name):
     replyIntent = res[1][0]
     intent = replyIntent["intent"]
 
-    if(intent=='greeting'):
+    if(intent=='greeting' or intent == "who am i ?"):
         botReply += " " + name 
 
     return botReply, intent
@@ -107,7 +107,7 @@ if __name__ == '__main__':
 
         name = "Person"
         intent = replyIntent["intent"]
-        if(intent=='greeting'):
+        if(intent=='greeting' or intent == 'who am i ?'):
             botReply += " " + name
         
         print("bot: ", botReply)

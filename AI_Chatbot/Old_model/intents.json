@@ -1,4 +1,11 @@
 {
+   "rules ": {
+      "comment":"writing rules for this json file below. You can add specific rules that would increase the performance of training chatbot",
+
+      "1" : "Use lower case for each pattern in an intent"
+
+   },
+
    "intents":[
  
    {
@@ -17,41 +24,43 @@
 {
     "tag": "greeting",
           "patterns": [
-              "Hi there",
-              "What's up?",
-              "Is anyone there?",
-              "Hey",
-              "Hola",
-              "Hello",
-              "Good day",
-              "Namaste",
-              "Hello!",
-              "Hey!",
-              "Hiya!",
-              "Greetings!",
-              "Good day!",
-              "Howdy!",
-              "Salutations!",
-              "What's up?",
-              "Yo!",
-              "Hi, friend!",
-              "Hey, buddy!",
-              "Hello, folks!",
-              "Nice to see you!",
-              "Good morning",
-              "Nice to meet you",
-              "hi",
-              "Howdy!",
-              "Hey there, stranger!",
-              "Hi, friend!",
-              "Hi, pal!",
-              "who am i"
+              "hi there",
+              "what's up?",
+              "is anyone there?",
+              "hello",
+
+              "namaste",
+              "hey!",
+              "greetings!",
+              "good day!",
+              "salutations!",
+              "what's up?",
+              "hi, friend!",
+              "hey, buddy!",
+              "hello, folks!",
+              "nice to see you!",
+              "good morning",
+              "nice to meet you",
+              "howdy!"
           ],
           "responses": [
               "Hello",
               "Good to see you again",
               "Hi there"
           ]
+},
+{
+   "tag":"who am i ?",
+   "patterns": [
+      "who am i",
+      "what am i",
+      "what is my name",
+      "say my name",
+      "Do you know me"
+   ],
+   "responses": [
+      ""
+   ]
 },
 {
   "tag" : "How are you?",
@@ -179,9 +188,7 @@
       "whats your name?",
       "what are you",
       "who are you",
-      "who is this",
-      "what am i chatting to",
-      "who am i taking to",
+      "who is this",   
       "what are you"
    ],
    "responses": [
