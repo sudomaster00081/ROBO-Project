@@ -110,6 +110,7 @@ def find_largest_repeating(names):
         # return (max_name)
         # exit()
     else:
+        return None
         print("\n\nPerson Unidentified-----Please Come Closer :\n")
         text_to_speech("Person Unidentified-----Please Come Closer :")
         return ("interrupt")

@@ -6,7 +6,7 @@ from textTovoice.voice import text_to_speech_speed
 import time
 
 person_name = main.main()
-print (person_name)
+#print (person_name)
 if person_name == "multiple":
         bot_resp = "Hello Multiple people"
         text_to_speech(bot_resp)
