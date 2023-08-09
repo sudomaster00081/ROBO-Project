@@ -6,7 +6,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
 
-from intentLib import intentAction
+from AI_Chatbot.Old_model.intentLib import intentAction
 
 lemmatizer = WordNetLemmatizer()
 
