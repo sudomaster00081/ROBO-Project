@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Interface</title>
+    <script>
+        function reloadPage() {
+  setTimeout(function() {
+    location.reload();
+  }, 500);
+}
+
+window.onload = function() {
+  reloadPage();
+};
+
+    </script>
+    <style>
+        .user { color: blue; }
+        .bot { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Chatbot Interface</h1>
+    <ul>
+        {% for message in chatbot_data %}
+            <li class="{{ message.type }}">{{ message.content }}</li>
+          
+            {% if loop.index % 2 == 0 %}
+                <li class="bot">BOT : </li>{{ message }}
+               
+            {% else %}
+              <li class="user">USER: </li>{{ message }}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
