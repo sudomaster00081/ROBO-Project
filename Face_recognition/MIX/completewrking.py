@@ -57,7 +57,8 @@ def generate_embedding(cropped_image, bgr=False):
 
 def load_known_faces():
     #path
-    face_embeddings_path = "Face_recognition/MIX/face_embeddings.npz"
+    # face_embeddings_path = "Face_recognition/MIX/face_embeddings.npz"
+    face_embeddings_path = "Face_recognition/Face-Detection/face_embeddings.npz"
 
 
     known_face_data = np.load(face_embeddings_path)
